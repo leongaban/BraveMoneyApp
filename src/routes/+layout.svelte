@@ -2,12 +2,13 @@
   import '../css/app.css';
 </script>
 
-<nav>
-  <a href="/">home</a>
-  <a href="/about">about</a>
-</nav>
-
-<slot></slot>
+<div class="bg-primary text-primary-foreground">
+  <nav>
+    <a href="/">home</a>
+    <a href="/about">about</a>
+  </nav>
+  <slot></slot>
+</div>
 
 <style>
   a {
