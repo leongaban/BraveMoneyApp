@@ -8,6 +8,12 @@
     crypto: 'Bitcoin',
   };
 
+  let obj2 = {
+    name: 'hi',
+    location: 'Dallas, TX',
+    crypto: '',
+  };
+
   function onPointChange(event: any) {
     console.log('Point changed', event.detail);
   }
@@ -18,7 +24,7 @@
 
 <Column status="first" {...obj} on:onPointChange={onPointChange} />
 
-<Column status="second" {...obj} />
+<Column status="second" {...obj2} />
 
 <style>
   h1 {

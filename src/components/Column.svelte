@@ -7,6 +7,8 @@
   export let crypto;
   // export let onPointChange: (skillPoint: number) => void = () => {};
 
+  const missingProp = !name || !location || !crypto;
+
   const dispatch = createEventDispatcher();
 
   let skillPoint = 0;
@@ -26,7 +28,7 @@
 </script>
 
 <div class="component">
-  <h2>Component: {status}</h2>
+  <h2 class:missing-prop={missingProp}>Component: {status}</h2>
 
   <p>This is an imported component</p>
 
@@ -56,6 +58,9 @@
     overflow: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     line-height: 0.5;
+  }
+  .missing-prop {
+    color: red;
   }
   .btn-update {
     padding: 1rem;
