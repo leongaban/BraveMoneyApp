@@ -14,26 +14,29 @@
     crypto: '',
   };
 
-  let value = '';
+  let email = '';
+  let emailError = '';
+
+  $: email, (emailError = email === '' ? '' : validateEmail(email) ? '' : 'Please enter a valid email address');
+
+  function validateEmail(email: string): boolean {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+  }
 
   function onPointChange(event: CustomEvent<number>) {
     console.log('Point changed', event.detail);
   }
-
-  // function onInput(event: Event) {
-  //   const input = event.target as HTMLInputElement;
-  //   value = input.value;
-  //   console.log('value', value);
-  // }
 </script>
 
 <h1>BraveMoney</h1>
 <h2>Your Investment Life Dashboard</h2>
 
-<!-- <input class="my-input" on:input={onInput} bind:value /> -->
-<input class="my-input" bind:value />
+<input class="my-input" bind:value={email} />
 
-<div>{value}</div>
+<div>{email}</div>
+
+<div class="error">{emailError}</div>
 
 <Column status="first" {...obj} on:onPointChange={onPointChange} />
 
