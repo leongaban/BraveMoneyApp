@@ -28,7 +28,7 @@
 </script>
 
 <div class="component">
-  <h2 class:missing-prop={missingProp}>Component: {status}</h2>
+  <h2 class:missingProp>Component: {status}</h2>
 
   <p>This is an imported component</p>
 
@@ -59,7 +59,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     line-height: 0.5;
   }
-  .missing-prop {
+  .missingProp {
     color: red;
   }
   .btn-update {
