@@ -4,3 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.container-header {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  padding: 1rem;
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border);
+
+  h1 {
+    font-size: 2rem;
+  }
+}
