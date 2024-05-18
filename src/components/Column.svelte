@@ -1,11 +1,11 @@
 <script lang="ts">
+  import { onMount, onDestroy, beforeUpdate, afterUpdate } from 'svelte';
   import { createEventDispatcher } from 'svelte';
 
   export let status;
   export let name;
   export let location;
   export let crypto;
-  // export let onPointChange: (skillPoint: number) => void = () => {};
 
   const missingProp = !name || !location || !crypto;
 
@@ -14,9 +14,6 @@
   let skillPoint = 0;
 
   $: dispatch('onPointChange', skillPoint);
-  // $: onPointChange(skillPoint);
-  // $: if (onPointChange) onPointChange(skillPoint);
-  // $: if (typeof onPointChange === 'function') onPointChange(skillPoint);
 
   function decrement() {
     skillPoint -= 1;
@@ -25,6 +22,22 @@
   function increment() {
     skillPoint += 1;
   }
+
+  onMount(() => {
+    console.log('Mounted');
+  });
+
+  onDestroy(() => {
+    console.log('Destroyed');
+  });
+
+  beforeUpdate(() => {
+    console.log('Before update');
+  });
+
+  afterUpdate(() => {
+    console.log('After update');
+  });
 </script>
 
 <div class="component">
