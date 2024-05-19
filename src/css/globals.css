@@ -44,13 +44,17 @@
     --radius: 0.5rem;
 
     /* Colors */
+    --amber-600: #d97706;
+
+    --lime-500: #84cc16;
+
+    --red-600: #dc2626;
+
     --slate-300: #cbd5e1;
 
     --slate-400: #94a3b8;
 
     --slate-500: #64748b;
-
-    --amber-600: #d97706;
 
     --violet-700: #6d28d9;
 

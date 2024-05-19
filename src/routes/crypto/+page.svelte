@@ -2,6 +2,9 @@
   import * as Card from '$lib/components/ui/card'
   import * as Table from '$lib/components/ui/table'
 
+  import UpArrowIcon from '@/components/UpArrowIcon.svelte'
+  import DownArrowIcon from '@/components/DownArrowIcon.svelte'
+
   import { toFinancialNumber as toFinNum } from '@/utils'
 
   let SOL_PRICE = 170.49
@@ -52,19 +55,20 @@
 
   <div class="grid-container">
     <div class="column column1">
-      <Card.Root class="w-[200px]">
+      <Card.Root class="w-[250px]">
         <Card.Header>
-          <Card.Title>Crypto Portfolio</Card.Title>
+          <Card.Title class="slate-300">Portfolio</Card.Title>
         </Card.Header>
         <Card.Content>
           <ul>
             <li>
-              <strong class="amber-600">BTC</strong>
-              $66,729
+              <strong class="amber-600">BTC</strong> $66,729 <UpArrowIcon
+                colorClass="lime-500"
+              />
             </li>
             <li>
               <strong class="amber-600">SOL</strong>
-              $170.49
+              $170.49 <DownArrowIcon colorClass="red-600" />
             </li>
             <li>
               <strong class="amber-600">BONK</strong>
