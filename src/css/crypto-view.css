@@ -1,0 +1,29 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 200px 320px 1fr;
+  gap: 16px;
+  margin-top: 1.5rem;
+  height: 100vh;
+}
+
+.column {
+  /* padding: 16px; */
+  /* background-color: #f0f0f0; */
+  /* border: 1px solid #ddd; */
+}
+
+.column1 {
+  /* background-color: #ffddcc; */
+}
+
+.column2 {
+  /* background-color: #ccffdd; */
+}
+
+.column3 {
+  background-color: #ddccff;
+}
+
+.orange-symbol {
+  color: var(--amber-600);
+}

@@ -10,14 +10,16 @@
 </script>
 
 <nav class="main-nav bg-gray-800 text-white p-4">
-  <ul class="flex space-x-4">
+  <ul class="flex items-center space-x-4">
     <li class="font-bold logo">BraveMoney</li>
     <Separator orientation="vertical" class="h-8 bg-slate-700" />
     {#each navLinks as link}
       <li>
         <a href={link.href} class="hover:underline">{link.name}</a>
       </li>
-      <Separator orientation="vertical" class="h-8 bg-slate-700" />
+      {#if link !== navLinks[navLinks.length - 1]}
+        <Separator orientation="vertical" class="h-8 bg-slate-700" />
+      {/if}
     {/each}
   </ul>
 </nav>
@@ -31,6 +33,7 @@
   ul {
     display: flex;
     gap: 1rem;
+    align-items: center; /* Ensure items are centered vertically */
   }
   a:hover {
     text-decoration: underline;

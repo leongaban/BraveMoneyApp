@@ -28,9 +28,14 @@
 
 <Navbar {navLinks} />
 
-<div class="bg-primary text-primary-foreground">
+<div class="text-primary-foreground page-wrapper">
   <slot></slot>
 </div>
 
 <style>
+  .page-wrapper {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    flex-direction: column;
+  }
 </style>

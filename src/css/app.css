@@ -1,13 +1,11 @@
 @import './globals.css';
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import './crypto-view.css';
 
 .page-header {
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  color: white;
   background-color: var(--background);
   border-bottom: 1px solid var(--border);
 
@@ -22,4 +20,12 @@
 
 .logo {
   font-size: 1.25rem;
+}
+
+.page-content {
+  min-height: 100vh;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
