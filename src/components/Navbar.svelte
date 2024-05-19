@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { Separator } from '$lib/components/ui/separator/index.js';
+
   type NavLink = {
     name: string;
     href: string;
@@ -7,10 +9,15 @@
   export let navLinks: NavLink[] = [];
 </script>
 
-<nav class="bg-gray-800 text-white p-4">
+<nav class="main-nav bg-gray-800 text-white p-4">
   <ul class="flex space-x-4">
+    <li class="font-bold logo">BraveMoney</li>
+    <Separator orientation="vertical" class="h-8 bg-slate-700" />
     {#each navLinks as link}
-      <li><a href={link.href} class="hover:underline">{link.name}</a></li>
+      <li>
+        <a href={link.href} class="hover:underline">{link.name}</a>
+      </li>
+      <Separator orientation="vertical" class="h-8 bg-slate-700" />
     {/each}
   </ul>
 </nav>

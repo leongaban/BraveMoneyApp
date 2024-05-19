@@ -4,11 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-.container-header {
+.page-header {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  /* align-items: center; */
   padding: 1rem;
   background-color: var(--background);
   border-bottom: 1px solid var(--border);
@@ -16,4 +14,12 @@
   h1 {
     font-size: 2rem;
   }
+}
+
+.main-nav  {
+  font-size: 1.2rem;
+}
+
+.logo {
+  font-size: 1.25rem;
 }

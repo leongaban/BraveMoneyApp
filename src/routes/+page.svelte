@@ -1,10 +1,10 @@
 <script lang="ts">
 </script>
 
-<div class="container-header">
-  <h1>BraveMoney</h1>
-  <h2>Your Investment Life Dashboard</h2>
-</div>
+<header class="page-header">
+  <h1>Total Net Worth</h1>
+  <h2>Investment Life Dashboard</h2>
+</header>
 
 <style>
 </style>
