@@ -1,0 +1,9 @@
+# Ignore artifacts:
+build
+coverage
+dist
+
+# Ignore all css files:
+# **/*.css
+# **/*.css.map
+# **/*.scss
