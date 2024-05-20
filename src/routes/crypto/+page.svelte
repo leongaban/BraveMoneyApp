@@ -2,6 +2,7 @@
   import * as Card from '$lib/components/ui/card'
   import * as Table from '$lib/components/ui/table'
 
+  import DataTable from './data-table.svelte'
   import UpArrowIcon from '@/components/UpArrowIcon.svelte'
   import DownArrowIcon from '@/components/DownArrowIcon.svelte'
 
@@ -109,6 +110,8 @@
         </Card.Content>
       </Card.Root>
     </div>
-    <div class="column column3">Column 3 - this will expand</div>
+    <div class="column column3">
+      <DataTable />
+    </div>
   </div>
 </header>
