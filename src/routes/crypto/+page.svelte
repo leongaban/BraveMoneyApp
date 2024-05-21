@@ -3,8 +3,8 @@
   import * as Table from '$lib/components/ui/table'
 
   import DataTable from '@/components/data-table/data-table.svelte'
-  import UpArrowIcon from '@/components/UpArrowIcon.svelte'
-  import DownArrowIcon from '@/components/DownArrowIcon.svelte'
+  import { ArrowUp } from 'lucide-svelte'
+  import { ArrowDown } from 'lucide-svelte'
 
   import { toFinancialNumber as toFinNum } from '@/utils'
 
@@ -51,8 +51,17 @@
 </script>
 
 <header class="page-header">
-  <h1>Crypto</h1>
-  <p>Dashboard: crypto prices, wallets & cost average</p>
+  <div class="flex justify-between items-center">
+    <div>
+      <h1>Crypto</h1>
+      <p>Dashboard: crypto prices, wallets & cost average</p>
+    </div>
+    <div class="right-align">
+      <h2>
+        Portfolio Value: <span class="portfolio-value">$91,332.34</span>
+      </h2>
+    </div>
+  </div>
 
   <div class="grid-container">
     <div class="column column1">
@@ -63,17 +72,16 @@
         <Card.Content>
           <ul>
             <li>
-              <strong class="amber-600">BTC</strong> $66,729 <UpArrowIcon
-                colorClass="lime-500"
-              />
+              <strong class="amber-600">BTC</strong> $66,729
+              <ArrowUp color="#84cc16" />
             </li>
             <li>
               <strong class="amber-600">SOL</strong>
-              $170.49 <DownArrowIcon colorClass="red-600" />
+              $170.49 <ArrowDown color="#dc2626" />
             </li>
             <li>
               <strong class="amber-600">BONK</strong>
-              $0.00002615
+              $0.00003223
             </li>
           </ul>
         </Card.Content>
@@ -85,16 +93,29 @@
         </Card.Header>
         <Card.Content>
           <ul>
-            <li>
-              <strong class="amber-600">BTC</strong> 1 | $66,729
+            <li class="grid grid-cols-2 w-full">
+              <strong>BTC</strong>
+              <span class="text-right">1</span>
             </li>
-            <li>
-              <strong class="amber-600">SOL</strong>
-              112.7101211 | $21,143.77
+            <li class="grid grid-cols-2 w-full">
+              <span class="slate-400 text-left">Value: </span>
+              <span class="text-right">$70,221</span>
             </li>
-            <li>
-              <strong class="amber-600">BONK</strong>
-              $0.00002615
+            <li class="grid grid-cols-2 w-full mt-4">
+              <strong>SOL</strong>
+              <span class="text-right">112.71</span>
+            </li>
+            <li class="grid grid-cols-2 w-full">
+              <span class="slate-400 text-left">Value: </span>
+              <span class="text-right">$20,075.92</span>
+            </li>
+            <li class="grid grid-cols-2 w-full mt-4">
+              <strong>BONK</strong>
+              <span class="text-right">31 mill</span>
+            </li>
+            <li class="grid grid-cols-2 w-full">
+              <span class="slate-400 text-left">Value: </span>
+              <span class="text-right">$1,035.42</span>
             </li>
           </ul>
         </Card.Content>

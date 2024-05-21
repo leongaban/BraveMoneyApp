@@ -3,7 +3,7 @@
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu'
   import { Button } from '$lib/components/ui/button'
 
-  // export let id: string
+  export let id: string
 </script>
 
 <DropdownMenu.Root>
@@ -19,14 +19,11 @@
     </Button>
   </DropdownMenu.Trigger>
   <DropdownMenu.Content>
-    <!-- <DropdownMenu.Group>
-      <DropdownMenu.Label>Actions</DropdownMenu.Label>
-      <DropdownMenu.Item on:click={() => navigator.clipboard.writeText(id)}>
-        Copy payment ID
-      </DropdownMenu.Item>
-    </DropdownMenu.Group> -->
-    <!-- <DropdownMenu.Separator /> -->
-    <DropdownMenu.Item>Delete Entry</DropdownMenu.Item>
-    <DropdownMenu.Item>Edit</DropdownMenu.Item>
+    <DropdownMenu.Item on:click={() => navigator.clipboard.writeText(id)}
+      >Delete Entry</DropdownMenu.Item
+    >
+    <DropdownMenu.Item on:click={() => navigator.clipboard.writeText(id)}
+      >Edit</DropdownMenu.Item
+    >
   </DropdownMenu.Content>
 </DropdownMenu.Root>

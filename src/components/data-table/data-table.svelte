@@ -11,7 +11,6 @@
   import { toFinancialNumber as toFinNum } from '@/utils'
 
   type CostAverage = {
-    id: string
     date: string
     amount: number
     price: number
@@ -21,15 +20,22 @@
   // TODO save in state
   const data: CostAverage[] = [
     {
-      id: 'm5gr84i9',
       date: '5/13/2024',
       amount: 11.93758026,
       price: 148.65,
-      total: toFinNum(17745.25),
+      total: toFinNum(17745.25), // TODO this calculation is done before
+    },
+    {
+      date: '5/21/2024',
+      amount: 1.118132,
+      price: 178.33,
+      total: toFinNum(199.4),
     },
   ]
 
   const table = createTable<CostAverage>(readable(data))
+
+  const indexAccessor = (row: CostAverage, index: number) => index
 
   const columns = table.createColumns([
     table.column({
@@ -49,15 +55,13 @@
       header: 'Total',
     }),
     table.column({
-      accessor: (row: CostAverage) => row.id,
+      accessor: (row: CostAverage) => indexAccessor(row, data.indexOf(row)),
       header: '',
-      cell: () => {
-        return createRender(DataTableActions)
+      cell: ({ value }: { value: number }) => {
+        return createRender(DataTableActions, { id: value.toString() }) // Pass the index or a unique value as id
       },
     }),
   ])
-
-  console.log('columns', columns)
 
   const { headerRows, pageRows, tableAttrs, tableBodyAttrs } =
     table.createViewModel(columns)
@@ -79,7 +83,6 @@
                   {:else}
                     <Render of={cell.render()} />
                   {/if}
-                  <!-- <Render of={cell.render()} /> -->
                 </Table.Head>
               </Subscribe>
             {/each}
@@ -88,7 +91,7 @@
       {/each}
     </Table.Header>
     <Table.Body {...$tableBodyAttrs}>
-      {#each $pageRows as row (row.id)}
+      {#each $pageRows as row, index (index)}
         <Subscribe rowAttrs={row.attrs()} let:rowAttrs>
           <Table.Row {...rowAttrs}>
             {#each row.cells as cell (cell.id)}

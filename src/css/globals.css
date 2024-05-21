@@ -11,6 +11,10 @@
     @apply bg-background text-foreground;
   }
 
+  svg {
+    display: inline;
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -44,7 +48,13 @@
     --radius: 0.5rem;
 
     /* Colors */
+    --amber-300: #fcd34d;
+
+    --amber-500: #f59e0b;
+
     --amber-600: #d97706;
+
+    --cyan-500: #06b6d4;
 
     --lime-500: #84cc16;
 

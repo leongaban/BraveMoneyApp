@@ -1,5 +1,17 @@
+.amber-300 {
+  color: var(--amber-300);
+}
+
+.amber-500 {
+  color: var(--amber-500);
+}
+
 .amber-600 {
   color: var(--amber-600);
+}
+
+.cyan-500 {
+  color: var(--cyan-500);
 }
 
 .lime-500 {
@@ -12,6 +24,10 @@
 
 .slate-300 {
   color: var(--slate-300);
+}
+
+.slate-400 {
+  color: var(--slate-400);
 }
 
 .slate-500 {
