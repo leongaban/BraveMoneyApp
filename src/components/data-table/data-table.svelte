@@ -8,6 +8,7 @@
   import { readable } from 'svelte/store'
   import * as Table from '$lib/components/ui/table'
   import DataTableActions from './data-table-actions.svelte'
+  import { toFinancialNumber as toFinNum } from '@/utils'
 
   type CostAverage = {
     id: string
@@ -17,13 +18,14 @@
     total: string
   }
 
+  // TODO save in state
   const data: CostAverage[] = [
     {
       id: 'm5gr84i9',
       date: '5/13/2024',
       amount: 11.93758026,
       price: 148.65,
-      total: '17745.25',
+      total: toFinNum(17745.25),
     },
   ]
 
@@ -49,8 +51,7 @@
     table.column({
       accessor: (row: CostAverage) => row.id,
       header: '',
-      cell: ({ value }: { value: string }) => {
-        // return createRender(DataTableActions, { id: value })
+      cell: () => {
         return createRender(DataTableActions)
       },
     }),

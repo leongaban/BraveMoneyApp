@@ -2,7 +2,7 @@
   import * as Card from '$lib/components/ui/card'
   import * as Table from '$lib/components/ui/table'
 
-  import DataTable from './data-table.svelte'
+  import DataTable from '@/components/data-table/data-table.svelte'
   import UpArrowIcon from '@/components/UpArrowIcon.svelte'
   import DownArrowIcon from '@/components/DownArrowIcon.svelte'
 
@@ -56,9 +56,9 @@
 
   <div class="grid-container">
     <div class="column column1">
-      <Card.Root class="w-[250px]">
+      <Card.Root class="w-[250px] mb-4">
         <Card.Header>
-          <Card.Title class="slate-300">Portfolio</Card.Title>
+          <Card.Title class="slate-300">Coin Prices</Card.Title>
         </Card.Header>
         <Card.Content>
           <ul>
@@ -70,6 +70,27 @@
             <li>
               <strong class="amber-600">SOL</strong>
               $170.49 <DownArrowIcon colorClass="red-600" />
+            </li>
+            <li>
+              <strong class="amber-600">BONK</strong>
+              $0.00002615
+            </li>
+          </ul>
+        </Card.Content>
+      </Card.Root>
+
+      <Card.Root class="w-[250px]">
+        <Card.Header>
+          <Card.Title class="slate-300">Portfolio</Card.Title>
+        </Card.Header>
+        <Card.Content>
+          <ul>
+            <li>
+              <strong class="amber-600">BTC</strong> 1 | $66,729
+            </li>
+            <li>
+              <strong class="amber-600">SOL</strong>
+              112.7101211 | $21,143.77
             </li>
             <li>
               <strong class="amber-600">BONK</strong>
