@@ -72,16 +72,16 @@
         <Card.Content>
           <ul>
             <li>
-              <strong class="amber-600">BTC</strong> $66,729
-              <ArrowUp color="#84cc16" />
+              <strong class="slate-500">BTC</strong> $66,729
+              <ArrowUp color="#84cc16" size="10" />
             </li>
             <li>
-              <strong class="amber-600">SOL</strong>
-              $170.49 <ArrowDown color="#dc2626" />
+              <strong class="slate-500">SOL</strong>
+              $170.49 <ArrowDown color="#dc2626" size="10" />
             </li>
             <li>
-              <strong class="amber-600">BONK</strong>
-              $0.00003223
+              <strong class="slate-500">BONK</strong>
+              $0.00003223 <ArrowDown color="#dc2626" size="10" />
             </li>
           </ul>
         </Card.Content>

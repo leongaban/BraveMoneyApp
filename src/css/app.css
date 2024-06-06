@@ -17,6 +17,10 @@
 
 .main-nav {
   font-size: 1.2rem;
+
+  a {
+    cursor: pointer;
+  }
 }
 
 .logo {
