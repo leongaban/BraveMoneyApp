@@ -1,6 +1,7 @@
 <script>
   import * as Card from '$lib/components/ui/card'
   import * as Table from '$lib/components/ui/table'
+  import * as Tabs from '$lib/components/ui/tabs/index'
 
   import DataTable from '@/components/data-table/data-table.svelte'
   import { ArrowUp } from 'lucide-svelte'
@@ -54,7 +55,7 @@
   <div class="flex justify-between items-center">
     <div>
       <h1>Crypto</h1>
-      <p>Dashboard: crypto prices, wallets & cost average</p>
+      <p>Crypto prices, wallets & cost average</p>
     </div>
     <div class="right-align">
       <h2>
@@ -153,7 +154,29 @@
       </Card.Root>
     </div>
     <div class="column column3">
-      <DataTable />
+      <Card.Root>
+        <Card.Header>
+          <Card.Title class="slate-300">Cost Average</Card.Title>
+        </Card.Header>
+        <Tabs.Root value="solana" class="w-[100]">
+          <Tabs.List class="grid w-full grid-cols-3">
+            <Tabs.Trigger value="solana">Solana</Tabs.Trigger>
+            <Tabs.Trigger value="bitcoin">Bitcoin</Tabs.Trigger>
+            <Tabs.Trigger value="bonk">Bonk</Tabs.Trigger>
+          </Tabs.List>
+          <Tabs.Content value="solana">
+            <DataTable />
+          </Tabs.Content>
+
+          <Tabs.Content value="bitcoin">
+            <DataTable />
+          </Tabs.Content>
+
+          <Tabs.Content value="bonk">
+            <DataTable />
+          </Tabs.Content>
+        </Tabs.Root>
+      </Card.Root>
     </div>
   </div>
 </header>
